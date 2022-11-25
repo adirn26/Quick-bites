@@ -22,22 +22,20 @@ const TestimonialSlider = () => {
     <Slider {...settings}>
       <div>
         <p className="review__text">
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-          atque, quam minus totam maiores laborum! Impedit consectetur illum
-          aliquid odit. Odit dolore ipsum quod debitis nostrum necessitatibus
-          quis dolorem quas!"
+          "currently, Quick Bites are market bullie in India for food ordering platforms. 
+          Quick Bites is just enjoying this position till the time a better options arrives
+          I get my food at home without any searching of restaurants since I have to travel a lot 
+          I normally use Quick ones a day and quite satisfied with the service""
         </p>
         <div className=" slider__content d-flex align-items-center gap-3 ">
           <img src={ava01} alt="avatar" className=" rounded" />
-          <h6>Jhon Doe</h6>
+          <h6>John Depp</h6>
         </div>
       </div>
       <div>
         <p className="review__text">
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-          atque, quam minus totam maiores laborum! Impedit consectetur illum
-          aliquid odit. Odit dolore ipsum quod debitis nostrum necessitatibus
-          quis dolorem quas!"
+          "I like everything about Quick Bites. The thing that is best about Zomato is it delivers my food so fast and every delivery person is so humble. It offers so many discount coupons like I can order pizzas with a 60% discount on daily bases.
+Review collected by and hosted on G2.com."
         </p>
         <div className="slider__content d-flex align-items-center gap-3 ">
           <img src={ava02} alt="avatar" className=" rounded" />
@@ -46,10 +44,8 @@ const TestimonialSlider = () => {
       </div>
       <div>
         <p className="review__text">
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-          atque, quam minus totam maiores laborum! Impedit consectetur illum
-          aliquid odit. Odit dolore ipsum quod debitis nostrum necessitatibus
-          quis dolorem quas!"
+          "Quick Bites is a food delivery app but now after the pandemic at our job location I have used it heavily, It great user interface and there are so many restaurants listed in it. Quick Bites gives us an immense choice for your hunger cravings. Now it really saves my time and I can keep my work as well as order food. Zomato gives a great user experience and gives us live tracking of your food and also I can see my delivery agent history, it builds trust and the more effective thing is
+          
         </p>
         <div className="slider__content d-flex align-items-center gap-3 ">
           <img src={ava03} alt="avatar" className=" rounded" />
