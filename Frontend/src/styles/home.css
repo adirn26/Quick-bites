@@ -1,5 +1,5 @@
 .feature__subtitle {
-  color: #5b7f1c;
+  color: #df2020;
 }
 
 .feature__title span {
@@ -15,7 +15,7 @@
 }
 
 .food__category {
-  background: #5b7f1c;
+  background: #fde4e4;
   text-align: center;
   margin-top: 30px;
   padding: 20px 0px;
@@ -27,7 +27,7 @@
   outline: none;
   padding: 7px 20px;
   background: transparent;
-  color: rgb(238, 238, 242);
+  color: rgb(0, 0, 0);
 }
 
 .food__category button img {
@@ -38,11 +38,11 @@
 .foodBtnActive {
   background: rgb(255, 255, 255) !important;
   border-radius: 5px;
-  color: #5b7f1c !important;
+  color: #df2020 !important;
 }
 
 .tasty__treat-title span {
-  color: #5b7f1c;
+  color: #df2020;
 }
 
 .tasty__treat-desc {
