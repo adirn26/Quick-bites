@@ -131,9 +131,22 @@ const Home = () => {
             </Col>
 
             <Col lg="6" md="6">
-              <div className="hero__img">
+              {/* <div className="hero__img">
                 <img src={heroImg} alt="hero-img" className="w-100" />
-              </div>
+              </div> */}
+              <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="4000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="..." alt="First slide"/>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src={heroImg} alt="Second slide"/>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="..." alt="Third slide"/>
+    </div>
+  </div>
+</div>
             </Col>
           </Row>
         </Container>
@@ -193,7 +206,7 @@ const Home = () => {
                   } `}
                   onClick={() => setCategory("ALL")}
                 >
-                   <h6>All</h6>
+                   <h6>All  </h6>
                 </button>
                 <button
                   className={`d-flex align-items-center gap-2 ${
@@ -201,7 +214,7 @@ const Home = () => {
                   } `}
                   onClick={() => setCategory("Snacks")}
                 >
-                  <img src={foodCategoryImg01} alt="" />
+                <img src="https://img.icons8.com/material-rounded/24/null/cutlery.png"/>
                   <h6>Snacks</h6>
                 </button>
 
@@ -211,7 +224,7 @@ const Home = () => {
                   } `}
                   onClick={() => setCategory("Chinese")}
                 >
-                  <img src={foodCategoryImg02} alt="" />
+                 <img src="https://img.icons8.com/material-rounded/24/null/cutlery.png"/>
                  <h6> Chinese</h6>
                 </button>
 
@@ -221,7 +234,7 @@ const Home = () => {
                   } `}
                   onClick={() => setCategory("Beverages")}
                 >
-                  <img src={foodCategoryImg03} alt="" />
+                  <img src="https://img.icons8.com/material-rounded/24/null/cutlery.png"/>
                   <h6> Beverages</h6>
                 </button>
               </div>
