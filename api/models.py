@@ -9,7 +9,7 @@ class CreateAccount(BaseUserManager):
 
         if not phone:
             raise ValueError("Enter Phone Number")
-        other_fields.setdefault('is_active', False)
+        other_fields.setdefault('is_active', True)
         user = self.model(phone=phone,user_name=user_name,password=password,**other_fields)
         user.set_password(password)
         user.save()
