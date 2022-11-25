@@ -28,7 +28,7 @@ class CreateUser(APIView):
     def post(self, request):
         print(request.data)
         myDict = request.data
-
+        print(myDict)
         try:
             user = NewUser.objects.get(phone=myDict['phone'])
             return Response({"message": "Phone number already present"})
@@ -119,5 +119,13 @@ def admin_send_details_users(request):
     data['orders']=OrderSerializer(orders,many=True).data
     return Response(data)
 
+@api_view(['POST'])
+def userdetails(request):
+    data = request.data
+    user = NewUser.objects.filter(phone=data['phone'])
+    print(user)
+    if user.exists():
+        return Response({"is_admin":user[0].is_superuser})
+    return Response("InVALID",status=status.HTTP_404_NOT_FOUND)
 
 

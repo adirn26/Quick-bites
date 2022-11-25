@@ -11,4 +11,5 @@ urlpatterns=[
     path('verify/<str:phone>',views.verifyPhone,name="OTP"),
     path('foods/orders/',views.save_order),
     path('admin/data/',views.admin_send_details_users),
+    path('userdetails',views.userdetails),
 ]
