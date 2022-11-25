@@ -105,8 +105,7 @@ const Home = () => {
                 </h1>
 
                 <p>
-                 Food is the thing which makes special in our day to day life providing
-                 various choices to you so that you can attend all lectures 'sleep'fully.
+                Relish the food and have an amazing learning experience.
                 </p>
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
@@ -155,17 +154,16 @@ const Home = () => {
           <Row>
             <Col lg="12" className="text-center">
               <h5 className="feature__subtitle mb-4">What we serve</h5>
-              <h2 className="feature__title">Just sit back at home</h2>
+              <h2 className="feature__title">Just sit back at class</h2>
               <h2 className="feature__title">
                 we will <span>take care</span>
               </h2>
               <p className="mb-1 mt-4 feature__text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-                officiis?
+                We specialize in serving delicacies to ensure you enjoy classes and aint hangry!!!
               </p>
               <p className="feature__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aperiam, eius.{" "}
+                
+               {" "}
               </p>
             </Col>
 
@@ -253,9 +251,8 @@ const Home = () => {
                   What our <span>customers</span> are saying
                 </h2>
                 <p className="testimonial__desc">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Distinctio quasi qui minus quos sit perspiciatis inventore
-                  quis provident placeat fugiat!
+                  Soo one always needs a proof of how efficient services are provided!
+                  Here are the reviews of some of our customers,
                 </p>
 
                 <TestimonialSlider />
