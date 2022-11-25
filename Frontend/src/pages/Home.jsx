@@ -32,20 +32,14 @@ import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
 
 const featureData = [
   {
-    title: "Quick Delivery",
-    imgUrl: featureImg01,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
-  },
-
-  {
     title: "Super Dine In",
     imgUrl: featureImg02,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    desc: "Enjoy hot'n delicious food",
   },
   {
     title: "Easy Pick Up",
     imgUrl: featureImg03,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    desc: "To grab bites in between classes",
   },
 ];
 
@@ -98,15 +92,15 @@ const Home = () => {
           <Row>
             <Col lg="6" md="6">
               <div className="hero__content  ">
-                <h5 className="mb-3">Easy way to make an order</h5>
+                <h5 className="mb-3"><h3>Easy way to make an order</h3></h5>
                 <h1 className="mb-4 hero__title">
                   <span>HUNGRY?</span> Just wait <br /> food at
                   <span> your convinient time</span>
                 </h1>
 
-                <p>
+                <h6>
                 Relish the food and have an amazing learning experience.
-                </p>
+                </h6>
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
                   <button className="order__btn d-flex align-items-center justify-content-between">
@@ -153,13 +147,13 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h5 className="feature__subtitle mb-4">What we serve</h5>
+              <h5 className="feature__subtitle mb-4"><h3>What we serve</h3></h5>
               <h2 className="feature__title">Just sit back at class</h2>
               <h2 className="feature__title">
                 we will <span>take care</span>
               </h2>
               <p className="mb-1 mt-4 feature__text">
-                We specialize in serving delicacies to ensure you enjoy classes and aint hangry!!!
+               <h6> We specialize in serving delicacies to ensure you enjoy classes and aint hangry!!!</h6>
               </p>
               <p className="feature__text">
                 
@@ -168,15 +162,15 @@ const Home = () => {
             </Col>
 
             {featureData.map((item, index) => (
-              <Col lg="4" md="6" sm="6" key={index} className="mt-5">
-                <div className="feature__item text-center px-5 py-3">
+              <Col lg="6" md="8" sm="8" key={index} className="mt-5">
+                <div className="feature__item text-center px-2 py-5">
                   <img
                     src={item.imgUrl}
                     alt="feature-img"
                     className="w-25 mb-3"
                   />
                   <h5 className=" fw-bold mb-3">{item.title}</h5>
-                  <p>{item.desc}</p>
+                  <h6>{item.desc}</h6>
                 </div>
               </Col>
             ))}
@@ -199,7 +193,7 @@ const Home = () => {
                   } `}
                   onClick={() => setCategory("ALL")}
                 >
-                  All
+                   <h6>All</h6>
                 </button>
                 <button
                   className={`d-flex align-items-center gap-2 ${
@@ -208,7 +202,7 @@ const Home = () => {
                   onClick={() => setCategory("Snacks")}
                 >
                   <img src={foodCategoryImg01} alt="" />
-                  Snacks
+                  <h6>Snacks</h6>
                 </button>
 
                 <button
@@ -218,7 +212,7 @@ const Home = () => {
                   onClick={() => setCategory("Chinese")}
                 >
                   <img src={foodCategoryImg02} alt="" />
-                  Chinese
+                 <h6> Chinese</h6>
                 </button>
 
                 <button
@@ -228,7 +222,7 @@ const Home = () => {
                   onClick={() => setCategory("Beverages")}
                 >
                   <img src={foodCategoryImg03} alt="" />
-                  Beverages
+                  <h6> Beverages</h6>
                 </button>
               </div>
             </Col>
