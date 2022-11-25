@@ -27,7 +27,7 @@
   outline: none;
   padding: 7px 20px;
   background: transparent;
-  color: black;
+    color: black;
 }
 
 .food__category button img {
@@ -38,6 +38,10 @@
 .foodBtnActive {
   background: rgb(255, 255, 255) !important;
   border-radius: 5px;
+}
+
+.tasty__treat-title span {
+  color: #df2020;
   color: black !important;
 }
 

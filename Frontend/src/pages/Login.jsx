@@ -1,16 +1,49 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
-
+import axiosInstance from "../components/axios";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
-  const loginNameRef = useRef();
-  const loginPasswordRef = useRef();
 
+  const navigate = useNavigate()
   const submitHandler = (e) => {
     e.preventDefault();
   };
+
+  const initialFormData = Object.freeze({
+    phone: '',
+
+    password: '',
+  });
+  const [FormData, updateFormData] = useState(initialFormData);
+  const handleChange = (e) => {
+    updateFormData({
+      ...FormData,
+      [e.target.name]: e.target.value.trim(),
+    })
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(FormData);
+
+    axiosInstance
+      .post('http://127.0.0.1:8000/api/token/', {
+        phone: FormData.phone,
+        password: FormData.password,
+      })
+      .then((res) => {
+        localStorage.setItem('access_token', res.data.access);
+        localStorage.setItem('refresh_token', res.data.refresh);
+        axiosInstance.defaults.headers['Authorization'] =
+          'JWT ' + localStorage.getItem('access_token');
+        console.log("Successfully logged in")
+        navigate("/home");
+
+      })
+  }
 
   return (
     <Helmet title="Login">
@@ -23,20 +56,22 @@ const Login = () => {
                 <div className="form__group">
                   <input
                     type="email"
-                    placeholder="Email"
+                    name="phone"
+                    placeholder="Enter phone"
                     required
-                    ref={loginNameRef}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="form__group">
                   <input
                     type="password"
-                    placeholder="Password"
+                    name="password"
+                    placeholder="Enter Password"
                     required
-                    ref={loginPasswordRef}
+                    onChange={handleChange}
                   />
                 </div>
-                <button type="submit" className="addTOCart__btn">
+                <button type="submit" className="addTOCart__btn" onClick={handleSubmit}>
                   Login
                 </button>
               </form>
