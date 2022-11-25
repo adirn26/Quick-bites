@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 
-import heroImg from "../assets/images/hero.png";
+import bg2 from "../assets/images/bg2.png";
+import bg1 from "../assets/images/bg1.png";
+import bg3 from "../assets/images/bg3.png";
 import "../styles/hero-section.css";
 
 import { Link } from "react-router-dom";
@@ -104,11 +106,12 @@ const Home = () => {
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
                   <button className="order__btn d-flex align-items-center justify-content-between">
-                    Order now <i class="ri-arrow-right-s-line"></i>
+                  <Link to="/foods">
+                  Order now <i class="ri-arrow-right-s-line"></i></Link>
                   </button>
 
                   <button className="all__foods-btn">
-                    <Link to="/foods">See all foods</Link>
+                    <Link to="/order_now">See all foods</Link>
                   </button>
                 </div>
 
@@ -137,13 +140,13 @@ const Home = () => {
               <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="4000">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="..." alt="First slide"/>
+      <img class="d-block w-100" src={bg2} alt="First slide"/>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src={heroImg} alt="Second slide"/>
+      <img class="d-block w-100" src={bg1} alt="Second slide"/>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide"/>
+      <img class="d-block w-100" src={bg3} alt="Third slide"/>
     </div>
   </div>
 </div>
@@ -195,7 +198,8 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h2>Popular Foods</h2>
+              <div className="order_now" >
+              <h2 >Popular Foods</h2></div>
             </Col>
 
             <Col lg="12">
