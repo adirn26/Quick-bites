@@ -64,13 +64,8 @@ def createFood(request):
 
 # get objects based on category
 @api_view(['GET'])
-def dispFoodOnCat(request, category):
-    category = category.lower()
-    if category != "all":
-        c = Categories.objects.get(category_name=category)
-        foods = Foods.objects.filter(category=c)
-    else:
-        foods = Foods.objects.all()
+def dispFoods(request):
+    foods = Foods.objects.all()
     serializer = FoodsSerialier(foods, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
