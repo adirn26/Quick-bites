@@ -11,8 +11,8 @@ const List = () => {
   const rows = [
     {
       id: 1143155,
-      product: "Acer Nitro 5",
-      img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
+      product: "Chicken burger",
+      img: "https://www.kitchensanctuary.com/wp-content/uploads/2019/08/Crispy-Chicken-Burger-square-FS-4518.jpg",
       customer: "John Smith",
       date: "1 March",
       amount: 785,
@@ -21,8 +21,8 @@ const List = () => {
     },
     {
       id: 2235235,
-      product: "Playstation 5",
-      img: "https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_UY327_FMwebp_QL65_.jpg",
+      product: "Pizza",
+      img: "https://www.vegrecipesofindia.com/wp-content/uploads/2020/11/pizza-recipe-2-500x375.jpg",
       customer: "Michael Doe",
       date: "1 March",
       amount: 900,
@@ -31,8 +31,8 @@ const List = () => {
     },
     {
       id: 2342353,
-      product: "Redragon S101",
-      img: "https://m.media-amazon.com/images/I/71kr3WAj1FL._AC_UY327_FMwebp_QL65_.jpg",
+      product: "Masala dosa",
+      img: "https://static.toiimg.com/thumb/54289752.cms?imgsize=495844&width=800&height=800",
       customer: "John Smith",
       date: "1 March",
       amount: 35,
@@ -41,8 +41,8 @@ const List = () => {
     },
     {
       id: 2357741,
-      product: "Razer Blade 15",
-      img: "https://m.media-amazon.com/images/I/71wF7YDIQkL._AC_UY327_FMwebp_QL65_.jpg",
+      product: "Idli vada",
+      img: "https://www.guttans.com/wp-content/uploads/2020/05/Idli-Dosa-Batter-Recipe.jpg",
       customer: "Jane Smith",
       date: "1 March",
       amount: 920,
@@ -51,8 +51,8 @@ const List = () => {
     },
     {
       id: 2342355,
-      product: "ASUS ROG Strix",
-      img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
+      product: "Roti",
+      img: "https://www.simplyrecipes.com/thmb/kfKdjryQIBH-MkGQXqN9mSfu-Yc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Roti-LEAD-3-38a1295fbb884aaabd42a34bcad9ea82.jpg",
       customer: "Harold Carol",
       date: "1 March",
       amount: 2000,

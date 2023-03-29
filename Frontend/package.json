@@ -30,12 +30,12 @@
     "@testing-library/user-event": "^13.5.0",
     "recharts": "^2.1.9",
     "sass": "^1.49.9",
-    "react-circular-progressbar": "^2.0.4"
-
+    "react-circular-progressbar": "^2.0.4",
+    "@google-pay/button-react": "^3.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

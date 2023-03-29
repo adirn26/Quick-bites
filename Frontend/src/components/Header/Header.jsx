@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
 
 import "../../styles/header.css";
+import useAuth from "../../hooks/useAuth";
 
 const nav__links = [
   {
@@ -28,7 +29,27 @@ const nav__links = [
   },
 ];
 
+const nav_admin = [
+  {
+    display: "Dashboard",
+    path:"/admin"
+  },
+  {
+    display:"Users",
+    path:"/admin/users"
+  },
+  {
+    display: "Products",
+    path:"/admin/products"
+  },
+  {
+    display: "Category",
+    path: "/admin/category"
+  }
+]
+
 const Header = () => {
+  const { auth } = useAuth();
   const menuRef = useRef(null);
   const headerRef = useRef(null);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
@@ -56,6 +77,54 @@ const Header = () => {
   }, []);
 
   return (
+    auth.role==1?
+    <header className="header" ref={headerRef}>
+      <Container>
+        <div className="nav__wrapper d-flex align-items-center justify-content-between">
+        <Link to="/">
+          <div className="logo">
+            <img src={logo} alt="logo" />
+          </div>
+        </Link>
+
+          {/* ======= menu ======= */}
+          <div className="navigation" ref={menuRef} onClick={toggleMenu}>
+            <div className="menu d-flex align-items-center gap-5">
+              {nav_admin.map((item, index) => (
+                <NavLink
+                  to={item.path}
+                  key={index}
+                  className={(navClass) =>
+                    navClass.isActive ? "active__menu" : ""
+                  }
+                >
+                  {item.display}
+                </NavLink>
+              ))}
+            </div>
+          </div>
+
+          {/* ======== nav right icons ========= */}
+          <div className="nav__right d-flex align-items-center gap-4">
+            <span className="cart__icon" onClick={toggleCart}>
+              <i class="ri-shopping-basket-line"></i>
+              <span className="cart__badge">{totalQuantity}</span>
+            </span>
+
+            <span className="user">
+              <Link to="/login">
+                <i class="ri-user-line"></i>
+              </Link>
+            </span>
+
+            <span className="mobile__menu" onClick={toggleMenu}>
+              <i class="ri-menu-line"></i>
+            </span>
+          </div>
+        </div>
+      </Container>
+    </header>
+    :
     <header className="header" ref={headerRef}>
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
