@@ -5,7 +5,11 @@ import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import axiosInstance from "../components/axios";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
+
 const Login = () => {
+
+  const {auth, setAuth } = useAuth();
 
   const navigate = useNavigate()
   const submitHandler = (e) => {
@@ -25,23 +29,48 @@ const Login = () => {
     })
   };
 
-  const handleSubmit = (e) => {
+  // if(localStorage.getItem('auth')){
+  //   setAuth(localStorage.getItem('auth'))
+  //   if(auth.role==1)
+  //       navigate("/admin");
+  //       else
+  //       navigate("/home")
+  //     }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(FormData);
 
-    axiosInstance
-      .post('http://127.0.0.1:8000/api/token/', {
+    await axiosInstance
+      .post('https://quick-bites-api.herokuapp.com/api/token/', {
         phone: FormData.phone,
         password: FormData.password,
       })
-      .then((res) => {
+      .then(async (res) => {
         localStorage.setItem('access_token', res.data.access);
         localStorage.setItem('refresh_token', res.data.refresh);
         axiosInstance.defaults.headers['Authorization'] =
           'JWT ' + localStorage.getItem('access_token');
+        await axiosInstance
+          .post('https://quick-bites-api.herokuapp.com/api/userdetails', {
+            phone: FormData.phone
+          })
+          .then(res=>{
+            console.log(res);
+            const role = res.data.is_admin==true?1:0;
+            const user = FormData.phone;
+            console.log(role)
+            setAuth({user,role})
+            localStorage.setItem('auth', auth)
+            console.log(auth);
+          })
+          console.log()
         console.log("Successfully logged in")
-        navigate("/home");
-
+        if(auth.role==1)
+        navigate("/admin");
+        else
+        navigate("/home")
+        
       })
   }
 

@@ -7,16 +7,14 @@ import List from "../../components/table/Table";
 const Single = () => {
   return (
     <div className="single">
-      <Sidebar />
       <div className="singleContainer">
-        <Navbar />
         <div className="top">
           <div className="left">
             <div className="editButton">Edit</div>
             <h1 className="title">Information</h1>
             <div className="item">
               <img
-                src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Lekdtf2P35H4Ls-cD1lFUeLe5BRBuGclxCastQr0BOsV5EP4ii_hC--GYTkBXO3oq2Q&usqp=CAU"
                 alt=""
                 className="itemImg"
               />

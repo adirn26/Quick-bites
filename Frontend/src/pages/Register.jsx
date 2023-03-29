@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import axiosInstance from "../components/axios";
 const Register = () => {
 
+  const navigate = useNavigate()
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -29,14 +30,14 @@ const Register = () => {
 
     try {
       axiosInstance
-        .post('http://127.0.0.1:8000/api/register/', {
+        .post('https://quick-bites-api.herokuapp.com/api/register/', {
           phone: FormData.phone,
           user_name: FormData.user_name,
           password: FormData.password,
         })
 
         .then((res) => {
-
+          navigate("/login");
           console.log(res.data);
         })
 

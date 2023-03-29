@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 
-import heroImg from "../assets/images/hero.png";
+import bg2 from "../assets/images/bg2.png";
+import bg1 from "../assets/images/bg1.png";
+import bg3 from "../assets/images/bg3.png";
 import "../styles/hero-section.css";
 
 import { Link } from "react-router-dom";
@@ -32,20 +34,14 @@ import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
 
 const featureData = [
   {
-    title: "Quick Delivery",
-    imgUrl: featureImg01,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
-  },
-
-  {
     title: "Super Dine In",
     imgUrl: featureImg02,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    desc: "Enjoy hot'n delicious food",
   },
   {
     title: "Easy Pick Up",
     imgUrl: featureImg03,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    desc: "To grab bites in between classes",
   },
 ];
 
@@ -98,24 +94,23 @@ const Home = () => {
           <Row>
             <Col lg="6" md="6">
               <div className="hero__content  ">
-                <h5 className="mb-3">Easy way to make an order</h5>
+                <h5 className="mb-3"><h3>Easy way to make an order</h3></h5>
                 <h1 className="mb-4 hero__title">
                   <span>HUNGRY?</span> Just wait <br /> food at
                   <span> your convinient time</span>
                 </h1>
 
-                <p>
+                <h6>
                 Relish the food and have an amazing learning experience.
-                </p>
+                </h6>
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
                   <button className="order__btn d-flex align-items-center justify-content-between">
-                    Order now <i class="ri-arrow-right-s-line"></i>
+                  <Link to="/foods">
+                  Order now <i class="ri-arrow-right-s-line"></i></Link>
                   </button>
 
-                  <button className="all__foods-btn">
-                    <Link to="/foods">See all foods</Link>
-                  </button>
+                  
                 </div>
 
                 <div className=" hero__service  d-flex align-items-center gap-5 mt-5 ">
@@ -137,9 +132,22 @@ const Home = () => {
             </Col>
 
             <Col lg="6" md="6">
-              <div className="hero__img">
+              {/* <div className="hero__img">
                 <img src={heroImg} alt="hero-img" className="w-100" />
-              </div>
+              </div> */}
+              <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="4000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src={bg2} alt="First slide"/>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src={bg1} alt="Second slide"/>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src={bg3} alt="Third slide"/>
+    </div>
+  </div>
+</div>
             </Col>
           </Row>
         </Container>
@@ -153,13 +161,13 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h5 className="feature__subtitle mb-4">What we serve</h5>
+              <h5 className="feature__subtitle mb-4"><h3>What we serve</h3></h5>
               <h2 className="feature__title">Just sit back at class</h2>
               <h2 className="feature__title">
                 we will <span>take care</span>
               </h2>
               <p className="mb-1 mt-4 feature__text">
-                We specialize in serving delicacies to ensure you enjoy classes and aint hangry!!!
+               <h6> We specialize in serving delicacies to ensure you enjoy classes and aint hangry!!!</h6>
               </p>
               <p className="feature__text">
                 
@@ -168,15 +176,15 @@ const Home = () => {
             </Col>
 
             {featureData.map((item, index) => (
-              <Col lg="4" md="6" sm="6" key={index} className="mt-5">
-                <div className="feature__item text-center px-5 py-3">
+              <Col lg="6" md="8" sm="8" key={index} className="mt-5">
+                <div className="feature__item text-center px-2 py-5">
                   <img
                     src={item.imgUrl}
                     alt="feature-img"
                     className="w-25 mb-3"
                   />
                   <h5 className=" fw-bold mb-3">{item.title}</h5>
-                  <p>{item.desc}</p>
+                  <h6>{item.desc}</h6>
                 </div>
               </Col>
             ))}
@@ -188,7 +196,8 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h2>Popular Foods</h2>
+              <div className="order_now" >
+              <h2 >Popular Foods</h2></div>
             </Col>
 
             <Col lg="12">
@@ -199,7 +208,7 @@ const Home = () => {
                   } `}
                   onClick={() => setCategory("ALL")}
                 >
-                  All
+                   <h6>All  </h6>
                 </button>
                 <button
                   className={`d-flex align-items-center gap-2 ${
@@ -207,8 +216,8 @@ const Home = () => {
                   } `}
                   onClick={() => setCategory("Snacks")}
                 >
-                  <img src={foodCategoryImg01} alt="" />
-                  Snacks
+                <img src="https://img.icons8.com/material-rounded/24/null/cutlery.png"/>
+                  <h6>Snacks</h6>
                 </button>
 
                 <button
@@ -217,8 +226,8 @@ const Home = () => {
                   } `}
                   onClick={() => setCategory("Chinese")}
                 >
-                  <img src={foodCategoryImg02} alt="" />
-                  Chinese
+                 <img src="https://img.icons8.com/material-rounded/24/null/cutlery.png"/>
+                 <h6> Chinese</h6>
                 </button>
 
                 <button
@@ -227,8 +236,8 @@ const Home = () => {
                   } `}
                   onClick={() => setCategory("Beverages")}
                 >
-                  <img src={foodCategoryImg03} alt="" />
-                  Beverages
+                  <img src="https://img.icons8.com/material-rounded/24/null/cutlery.png"/>
+                  <h6> Beverages</h6>
                 </button>
               </div>
             </Col>
